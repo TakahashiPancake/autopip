@@ -37,17 +37,17 @@ class ExtendedStringIO(io.StringIO):
   # 定义多输出
   __outputs: list[TextIO]
 
-  def __init__(self, *sync: TextIO) -> None:
+  def __init__(self, *syncs: TextIO) -> None:
     """
     Args:
-      sync:   同步输出流
+      syncs:   同步输出流
 
     Returns:
       return: 无
 
     """
     # 同步输出到流
-    self.__outputs = list(sync)
+    self.__outputs = list(syncs)
 
     # 调用父类构造方法
     super().__init__()
